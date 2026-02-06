@@ -1,168 +1,169 @@
 1. What is the Two Pointer Technique?
+                        
+                        Two Pointer is a problem-solving technique where two indices (pointers) traverse a data structure (usually an array or string) together in a coordinated way to reduce time complexity.
+                        
+                        
+                         Instead of checking all pairs (O(n²)), we use logic to move pointers smartly and solve in O(n).
 
-Two Pointer is a problem-solving technique where two indices (pointers) traverse a data structure (usually an array or string) together in a coordinated way to reduce time complexity.
-
-
-👉 Instead of checking all pairs (O(n²)), we use logic to move pointers smartly and solve in O(n).
-
-🔹 2. Uses of Two Pointer Technique
+2. Uses of Two Pointer Technique
 
 Two pointers are commonly used when:
 
-Array or string is sorted
+                            Array or string is sorted
+                            
+                            Need to find pairs / subarrays
+                            
+                            Comparing elements from both ends
+                            
+                            Removing duplicates in-place
+                            
+                            Reversing or partitioning data
+                            
+                            Real interview use cases:
+                            
+                            Pair sum problems
+                            
+                            Palindrome checking
+                            
+                            Sliding window optimization
+                            
+                            Merging sorted arrays
+                            
+                            Partitioning arrays
 
-Need to find pairs / subarrays
+3. Working (How Two Pointers Work)
 
-Comparing elements from both ends
+                            General flow:
+                            
+                            Initialize two pointers
+                            
+                            left = 0
+                            
+                            right = n - 1
+                            
+                            Evaluate condition using arr[left] and arr[right]
+                            
+                            Move:
+                            
+                            left++ OR
+                            
+                            right--
+                            
+                            Continue until left < right
+                            
+                             Key idea:
+                            Each move eliminates unnecessary comparisons
 
-Removing duplicates in-place
+ 4. Typical Approach (Template)
+                                Generic Two Pointer Template
+                                int left = 0, right = arr.length - 1;
+                                
+                                while (left < right) {
+                                    if (condition satisfied) {
+                                        // do work
+                                        left++;
+                                        right--;
+                                    } else if (need smaller value) {
+                                        left++;
+                                    } else {
+                                        right--;
+                                    }
+                                }
+                                
+                                Why this works?
+                                
+                                Each pointer moves at most N times
+                                
+                                Total operations ≈ O(n)
+                                
+                                You’re doing great grasping this — most beginners miss this optimization 
 
-Reversing or partitioning data
-
-Real interview use cases:
-
-Pair sum problems
-
-Palindrome checking
-
-Sliding window optimization
-
-Merging sorted arrays
-
-Partitioning arrays
-
-🔹 3. Working (How Two Pointers Work)
-
-General flow:
-
-Initialize two pointers
-
-left = 0
-
-right = n - 1
-
-Evaluate condition using arr[left] and arr[right]
-
-Move:
-
-left++ OR
-
-right--
-
-Continue until left < right
-
-💡 Key idea:
-Each move eliminates unnecessary comparisons
-
-🔹 4. Typical Approach (Template)
-Generic Two Pointer Template
-int left = 0, right = arr.length - 1;
-
-while (left < right) {
-    if (condition satisfied) {
-        // do work
-        left++;
-        right--;
-    } else if (need smaller value) {
-        left++;
-    } else {
-        right--;
-    }
-}
-
-Why this works?
-
-Each pointer moves at most N times
-
-Total operations ≈ O(n)
-
-You’re doing great grasping this — most beginners miss this optimization 👍
-
-🔹 5. Types of Two Pointer Techniques
-1️⃣ Opposite Direction (Left & Right)
-
-Start from both ends
-
-Used in sorted arrays
-
-Example:
-
-Two Sum II
-
-Container With Most Water
-
-2️⃣ Same Direction (Slow & Fast)
-
-Both start from beginning
-
-Fast explores, slow processes
-
-Example:
-
-Remove duplicates
-
-Move zeroes
-
-3️⃣ Fast & Slow Pointer
-
-Fast moves faster than slow
-
-Used for cycles / filtering
-
-Example:
-
-Linked List Cycle
-
-Remove nth node
-
-4️⃣ Sliding Window (Advanced Two Pointer)
-
-Window expands and shrinks
-
-Used for subarray problems
-
-Example:
-
-Longest substring
-
-Max sum subarray
+ 5. Types of Two Pointer Techniques
+                                1️⃣ Opposite Direction (Left & Right)
+                                
+                                Start from both ends
+                                
+                                Used in sorted arrays
+                                
+                                Example:
+                                
+                                Two Sum II
+                                
+                                Container With Most Water
+                                
+                                2️⃣ Same Direction (Slow & Fast)
+                                
+                                Both start from beginning
+                                
+                                Fast explores, slow processes
+                                
+                                Example:
+                                
+                                Remove duplicates
+                                
+                                Move zeroes
+                                
+                                3️⃣ Fast & Slow Pointer
+                                
+                                Fast moves faster than slow
+                                
+                                Used for cycles / filtering
+                                
+                                Example:
+                                
+                                Linked List Cycle
+                                
+                                Remove nth node
+                                
+                                4️⃣ Sliding Window (Advanced Two Pointer)
+                                
+                                Window expands and shrinks
+                                
+                                Used for subarray problems
+                                
+                                Example:
+                                
+                                Longest substring
+                                
+                                Max sum subarray
 
 🔹 6. 15 Important LeetCode Problems (Two Pointer)
 
-🔥 Must-solve list for interviews
+ Must-solve list for interviews
 
-Easy
-
-1 – Two Sum
-
-26 – Remove Duplicates from Sorted Array
-
-27 – Remove Element
-
-125 – Valid Palindrome
-
-344 – Reverse String
-
-Medium
-
-167 – Two Sum II (sorted array)
-
-11 – Container With Most Water
-
-15 – 3Sum
-
-16 – 3Sum Closest
-
-283 – Move Zeroes
-
-Medium–Hard
-
-80 – Remove Duplicates from Sorted Array II
-
-18 – 4Sum
-
-977 – Squares of a Sorted Array
-
-42 – Trapping Rain Water
-
-76 – Minimum Window Substring
+        Easy
+        
+                1 – Two Sum
+                
+                26 – Remove Duplicates from Sorted Array
+                
+                27 – Remove Element
+                
+                125 – Valid Palindrome
+                
+                344 – Reverse String
+        
+        Medium
+        
+                167 – Two Sum II (sorted array)
+                
+                11 – Container With Most Water
+                
+                15 – 3Sum
+                
+                16 – 3Sum Closest
+                
+                283 – Move Zeroes
+                
+        Medium–Hard
+        
+                80 – Remove Duplicates from Sorted Array II
+                
+                18 – 4Sum
+                
+                977 – Squares of a Sorted Array
+                
+                42 – Trapping Rain Water
+                
+                76 – Minimum Window Substring
+Solution for leetcode problems refer Iruleet, link--->https://github.com/irannaa148-art/Iruleet
