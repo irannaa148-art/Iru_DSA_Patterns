@@ -1,5 +1,6 @@
 # Iru_DSA_Patterns
 Pattrrns used in DSA to solve a problems
+<br>
 You can find every thin in Issues https://github.com/irannaa148-art/Iru_DSA_Patterns/issues
 <br>
 Pattern Coverage 
